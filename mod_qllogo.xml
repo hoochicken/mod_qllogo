@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.x"
+	client="site"
+	method="upgrade">
+	<name>qllogo</name>
+	<author>Mareike Riegel</author>
+	<creationDate>2017</creationDate>
+	<copyright>ql.de</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>mareike.riegel@ql.de</authorEmail>
+	<authorUrl>https://www.ql.de</authorUrl>
+	<version>1.0.8</version>
+	<description>MOD_QLLOGO_XML_DESCRIPTION</description>
+    <updateservers>
+        <server type="extension" priority="1" name="qllogo - Updates"><![CDATA[https://www.blackforest-software.com/_scripts/updates/mod_qllogo.xml]]></server>
+    </updateservers>
+	<files>
+		<filename module="mod_qllogo">mod_qllogo.php</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+        <filename>mod_qllogo.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_qllogo.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_qllogo.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.mod_qllogo.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.mod_qllogo.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params"
+		        addfieldpath="/modules/mod_qllogo/php/fields"
+                addrulepath="/modules/mod_qllogo/php/rules">
+            <fieldset
+                    name="basic">
+                <field name="logoDisplay" type="radio"
+                       class="btn-group"
+                       label="MOD_QLLOGO_LOGO_LABEL"
+                       description="MOD_QLLOGO_LOGO_DESC"
+                       default="1">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                <field name="logoImage" type="media"
+                       label="MOD_QLLOGO_IMAGE_LABEL"
+                       description="MOD_QLLOGO_IMAGE_DESC"
+                       directory="_layout"/>
+                <field name="logoHeight" type="integer"
+                       label="MOD_QLLOGO_HEIGHT_LABEL"
+                       description="MOD_QLLOGO_HEIGHT_DESC"
+                       first="40" last="200" step="4">
+                    <option value="auto">MOD_QLLOGO_AUTO</option>
+                </field>
+                <field name="logoWidth" type="integer"
+                       label="MOD_QLLOGO_WIDTH_LABEL"
+                       description="MOD_QLLOGO_WIDTH_DESC"
+                       first="70" last="500" step="4">
+                    <option value="auto">MOD_QLLOGO_AUTO</option>
+                </field>
+                <field name="logoFloat" label="MOD_QLLOGO_FLOAT_LABEL"
+                       description="MOD_QLLOGO_FLOAT_DESC"
+                       type="radio" default="left" class="btn-group">
+                    <option value="none">none</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <!--option value="center">centered</option-->
+                </field>
+            </fieldset>
+            <fieldset
+                    name="link">
+                <field name="logoLink" type="radio"
+                       class="btn-group"
+                       label="MOD_QLLOGO_LOGOLINK_LABEL"
+                       description="MOD_QLLOGO_LOGOLINK_DESC"
+                       default="1">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                    <option value="2">MOD_QLLOGO_LOGOALTERNATIVE</option>
+                </field>
+                <field name="logoLinkAlternative" type="text"
+                       class="btn-group"
+                       label="MOD_QLLOGO_LOGOALTERNATIVE_LABEL"
+                       description="MOD_QLLOGO_LOGOALTERNATIVE_DESC"
+                       hint="http://someUrl.com">
+                </field>
+                <field name="logoLinkClass" type="text"
+                       class="btn-group"
+                       label="MOD_QLLOGO_CLASS_LABEL"
+                       description="MOD_QLLOGO_CLASS_DESC"
+                       hint="navbar-brand">
+                </field>
+            </fieldset>
+            <fieldset
+                    name="sitename">
+                <field name="sitenameDisplay" type="radio"
+                       class="btn-group"
+                       label="MOD_QLLOGO_SITENAME_LABEL"
+                       description="MOD_QLLOGO_SITENAME_DESC"
+                       default="0">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                    <option value="2">MOD_QLLOGO_SITENAMEALTERNATIVE</option>
+                </field>
+                <field name="sitenameAlternative" type="text"
+                       label="MOD_QLLOGO_SITENAMEALTERNATIVE_LABEL"
+                       description="MOD_QLLOGO_SITENAMEALTERNATIVE_DESC"
+                       hint="Websitename">
+                </field>
+                <field name="sitenamePosition" type="list"
+                       label="MOD_QLLOGO_POSITION_LABEL"
+                       description="MOD_QLLOGO_POSITION_DESC"
+                       default="1">
+                    <option value="1">MOD_QLLOGO_BEFORELOGO</option>
+                    <option value="2">MOD_QLLOGO_AFTERLOGO</option>
+                </field>
+                <field name="useStyles" type="radio" class="btn-group"
+                       label="MOD_QLLOGO_USESTYLES_LABEL"
+                       description="MOD_QLLOGO_USESTYLES_DESC"
+                       default="0">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="sitenameFont"
+                       type="combo"
+                       default="Arial"
+                       label="MOD_QLLOGO_FONT_LABEL"
+                       description="MOD_QLLOGO_FONT_DESC">
+                    <option value="Arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Lucida Console">Lucida Console</option>
+                    <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                    <option value="Palatino Linotype">Palatino Linotype</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Trebuchet MS">Trebuchet MS</option>
+                    <option value="Verdana">Verdana</option>
+                </field>
+                <field name="sitenameFontsize"
+                       type="integer"
+                       first="8"
+                       default="25"
+                       last="80"
+                       step="1"
+                       label="MOD_QLLOGO_FONTSIZE_LABEL"
+                       description="MOD_QLLOGO_FONTSIZE_DESC">
+                </field>
+                <field name="sitenameColor"
+                       type="color"
+                       label="MOD_QLLOGO_COLOR_LABEL"
+                       description="MOD_QLLOGO_COLOR_DESC">
+                </field>
+                <field name="sitenameBackground"
+                       type="color"
+                       label="MOD_QLLOGO_BACKGROUND_LABEL"
+                       description="MOD_QLLOGO_BACKGROUND_DESC">
+                </field>
+                <field name="sitenameLetterspacing"
+                       type="integer"
+                       first="0"
+                       last="10"
+                       step="1"
+                       default="0"
+                       label="MOD_QLLOGO_LETTERSPACING_LABEL"
+                       description="MOD_QLLOGO_LETTERSPACING_DESC">
+                </field>
+                <field name="sitenameFontvariant"
+                       type="list"
+                       default=""
+                       label="MOD_QLLOGO_FONTVARIANT_LABEL"
+                       description="MOD_QLLOGO_FONTVARIANT_DESC">
+                    <option value="">JNONE</option>
+                    <option value="small-caps">MOD_QLLOGO_FONTVARIANT_SMALLCAPS</option>
+                    <option value="lowercase">MOD_QLLOGO_FONTVARIANT_LOWERCASE</option>
+                    <option value="uppercase">MOD_QLLOGO_FONTVARIANT_UPPERCASE</option>
+                </field>
+            </fieldset>
+
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
