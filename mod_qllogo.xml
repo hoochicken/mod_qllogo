@@ -11,10 +11,10 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>mareike.riegel@ql.de</authorEmail>
 	<authorUrl>https://www.ql.de</authorUrl>
-	<version>2.0.5</version>
+	<version>2.0.7</version>
 	<description>MOD_QLLOGO_XML_DESCRIPTION</description>
     <updateservers>
-        <server type="extension" priority="1" name="qllogo - Updates">https://raw.githubusercontent.com/hoochicken/mod_qllogo/release-2.0.5/_jupdate/mod_qllogo.xml</server>
+        <server type="extension" priority="1" name="qllogo - Updates">https://raw.githubusercontent.com/hoochicken/mod_qllogo/release-2.0.7/_jupdate/mod_qllogo.xml</server>
     </updateservers>
 	<files>
 		<filename module="mod_qllogo">mod_qllogo.php</filename>
