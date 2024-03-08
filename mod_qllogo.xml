@@ -6,15 +6,15 @@
 	method="upgrade">
 	<name>qllogo</name>
 	<author>Mareike Riegel</author>
-	<creationDate>20231014</creationDate>
+	<creationDate>20241014</creationDate>
 	<copyright>ql.de</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@ql.de</authorEmail>
 	<authorUrl>https://www.ql.de</authorUrl>
-	<version>3.0.1</version>
+	<version>3.0.2</version>
 	<description>MOD_QLLOGO_XML_DESCRIPTION</description>
     <updateservers>
-        <server type="extension" priority="1" name="qllogo - Updates">https://raw.githubusercontent.com/hoochicken/mod_qllogo/release-3.0.0/_jupdate/mod_qllogo.xml</server>
+        <server type="extension" priority="1" name="qllogo - Updates">https://raw.githubusercontent.com/hoochicken/mod_qlform/main/_jupdate/mod_qllogo.xml</server>
     </updateservers>
 	<files>
 		<filename module="mod_qllogo">mod_qllogo.php</filename>

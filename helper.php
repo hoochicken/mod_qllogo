@@ -1,12 +1,14 @@
 <?php
 /**
- * @package        mod_qlqllogo
- * @copyright    Copyright (C) 2023 ql.de All rights reserved.
- * @author        Mareike Riegel mareike.riegel@ql.de
+ * @package        mod_qllogo
+ * @copyright      Copyright (C) 2024 ql.de All rights reserved.
+ * @author         Mareike Riegel mareike.riegel@ql.de
  * @license        GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // no direct access
+use Joomla\CMS\Factory;
+use Joomla\CMS\Uri\Uri;
 use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
@@ -24,18 +26,18 @@ class modQllogoHelper
 
     public function getLinkHome()
     {
-        return JURI::base();
+        return URI::base();
     }
 
     public function getSitename()
     {
-        if (2 == $this->params->get('sitenameDisplay')) return $this->params->get('sitenameAlternative');
-        return JFactory::getConfig()->get('sitename');
+        if (2 === (int)$this->params->get('sitenameDisplay')) return $this->params->get('sitenameAlternative');
+        return Factory::getApplication()->getConfig()->get('sitename');
     }
 
     public function getLink()
     {
-        if (2 == $this->params->get('logoLink')) return $this->params->get('logoLinkAlternative');
+        if (2 === (int)$this->params->get('logoLink')) return $this->params->get('logoLinkAlternative');
         return $this->getLinkHome();
     }
 
