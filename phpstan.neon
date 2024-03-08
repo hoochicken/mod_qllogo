@@ -1,0 +1,30 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#(.*)unknown class Joomla(.*)#"
+			count: 1
+			path: helper.php
+		-
+			message: "#(.*)on an unknown class JFactory(.*)#"
+			count: 1
+			path: helper.php
+		-
+			message: "#unknown class JURI#"
+			count: 1
+			path: helper.php
+		-
+			message: "#unknown class JModuleHelper#"
+			count: 1
+			path: mod_qllogo.php
+		-
+			message: "#an unknown class JFactory#"
+			count: 1
+			path: mod_qllogo.php
+		-
+			message: "#(.*)an unknown class JModuleHelper(.*)#"
+			count: 3
+			path: tmpl\default.php
+		-
+			message: "#(.*) of method Composer(.*)#"
+			count: 1
+			path: vendor\composer\InstalledVersions.php

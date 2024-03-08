@@ -1,0 +1,36 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to static method base\\(\\) on an unknown class JURI\\.$#"
+			count: 1
+			path: helper.php
+
+		-
+			message: "#^Call to static method getConfig\\(\\) on an unknown class JFactory\\.$#"
+			count: 1
+			path: helper.php
+
+		-
+			message: "#^Property modQllogoHelper\\:\\:\\$params has unknown class Joomla\\\\Registry\\\\Registry as its type\\.$#"
+			count: 1
+			path: helper.php
+
+		-
+			message: "#^Call to static method getDocument\\(\\) on an unknown class JFactory\\.$#"
+			count: 1
+			path: mod_qllogo.php
+
+		-
+			message: "#^Call to static method getLayoutPath\\(\\) on an unknown class JModuleHelper\\.$#"
+			count: 1
+			path: mod_qllogo.php
+
+		-
+			message: "#^Call to static method getLayoutPath\\(\\) on an unknown class JModuleHelper\\.$#"
+			count: 3
+			path: tmpl/default.php
+
+		-
+			message: "#^Parameter \\$parser of method Composer\\\\InstalledVersions\\:\\:satisfies\\(\\) has invalid type Composer\\\\Semver\\\\VersionParser\\.$#"
+			count: 1
+			path: vendor/composer/InstalledVersions.php

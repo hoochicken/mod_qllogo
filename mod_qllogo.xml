@@ -11,7 +11,7 @@
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@ql.de</authorEmail>
 	<authorUrl>https://www.ql.de</authorUrl>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<description>MOD_QLLOGO_XML_DESCRIPTION</description>
     <updateservers>
         <server type="extension" priority="1" name="qllogo - Updates">https://raw.githubusercontent.com/hoochicken/mod_qllogo/release-3.0.0/_jupdate/mod_qllogo.xml</server>
@@ -89,6 +89,16 @@
                        label="MOD_QLLOGO_CLASS_LABEL"
                        description="MOD_QLLOGO_CLASS_DESC"
                        hint="navbar-brand">
+                </field>
+                <field name="logoTarget" type="list"
+                       class="btn-group"
+                       default="_self"
+                       label="MOD_QLLOGO_TARGET_LABEL"
+                       description="MOD_QLLOGO_TARGET_DESC">
+                    <option value="_self">MOD_QLLOGO_TARGET_SAMEWINDOW</option>
+                    <option value="_blank">MOD_QLLOGO_TARGET_NEWTABORWINDOW</option>
+                    <option value="_parent">MOD_QLLOGO_TARGET_PARENT</option>
+                    <option value="_top">MOD_QLLOGO_TARGET_TOP</option>
                 </field>
             </fieldset>
             <fieldset

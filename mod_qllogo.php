@@ -12,6 +12,7 @@
 defined('_JEXEC') or die;
 //echo '<pre>';print_r($params);die;
 if (1 > $params->get('sitenameDisplay', 1) && 1 > $params->get('logoDisplay', 1)) return;
+$logoTarget = (string)$params->get('logoTarget', '_self');
 require_once dirname(__FILE__) . '/helper.php';
 $qllogoHelper = new modQllogoHelper($module, $params);
 JFactory::getDocument()->addStyleDeclaration($qllogoHelper->getStyles());

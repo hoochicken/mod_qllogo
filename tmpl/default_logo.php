@@ -8,14 +8,15 @@
 /** @var \Joomla\Registry\Registry $params */
 /** @var stdClass $module */
 /** @var modQllogoHelper $qllogoHelper */
+/** @var string $logoTarget */
 // no direct access
 defined('_JEXEC') or die;
 ?>
 <div class="logo">
     <?php if (0 < $params->get('logoLink', 1)): ?>
-    <a class="<?php echo $params->get('logoLinkClass', ''); ?>" href="<?php echo $qllogoHelper->getLink(); ?>">
+    <a target="<?= $logoTarget ?>" class="<?= $params->get('logoLinkClass', ''); ?>" href="<?= $qllogoHelper->getLink(); ?>">
         <?php endif; ?>
-        <img alt="<?php echo $qllogoHelper->getSitename(); ?>" src="<?php echo $params->get('logoImage'); ?>"/>
+        <img alt="<?= $qllogoHelper->getSitename(); ?>" src="<?= $params->get('logoImage'); ?>"/>
         <?php if (0 < $params->get('logoLink', 1)): ?>
     </a>
 <?php endif; ?>
